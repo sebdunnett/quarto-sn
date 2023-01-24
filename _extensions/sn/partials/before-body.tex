@@ -1,0 +1,40 @@
+$-- Implements the frontmatter, title page, and abstract.
+$--
+$-- %%%% TODO %%%%%
+$-- Customize is needed, otherwise remove this partials to use Quarto default one
+$-- %%%%%%%%%%%%%%%%
+
+$if(title)$
+\title[$if(short-title)$$short-title$$endif$]{$title$}
+$endif$
+
+$for(by-author)$
+$if(it.attributes.corresponding)$
+$if(it.attributes.equal-contributor)$
+\author*[$for(it.affiliations)$$it.number$$sep$,$endfor$]{\fnm{$it.name.given$} \sur{$it.name.family$}}\email{$it.email$}
+\equalcont{These authors contributed equally to this work.}
+$else$
+\author*[$for(it.affiliations)$$it.number$$sep$,$endfor$]{\fnm{$it.name.given$} \sur{$it.name.family$}}\email{$it.email$}
+$endif$
+$else$
+$if(it.attributes.equal-contributor)$
+\author[$for(it.affiliations)$$it.number$$sep$,$endfor$]{\fnm{$it.name.given$} \sur{$it.name.family$}}\email{$it.email$}
+\equalcont{These authors contributed equally to this work.}
+$else$
+\author[$for(it.affiliations)$$it.number$$sep$,$endfor$]{\fnm{$it.name.given$} \sur{$it.name.family$}}\email{$it.email$}
+$endif$
+$endif$
+$endfor$
+
+$for(by-affiliation)$
+\affil*[$it.number$]{\orgdiv{$it.department$}, \orgname{$it.name$}, \orgaddress{\street{$it.address$}, \city{$it.city$}, \postcode{$it.postal-code$}, \state{$it.region$}, \country{$it.country$}}}
+$endfor$
+
+$if(abstract)$
+\abstract{$abstract$}
+$endif$
+
+\keywords{$for(keywords)$$keywords$$sep$, $endfor$}
+
+\maketitle
+

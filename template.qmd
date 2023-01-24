@@ -1,0 +1,106 @@
+---
+title: So you want to publish in Springer Nature? Here's a template for you.
+short-title: Springer Nature Quarto template
+date: now
+date-format: "YYYY"
+author:
+- name: John Doe
+  affiliations:
+  - id: dummy
+    number: 1
+    name: Dummy Org
+    department: Awesome Dept
+    address: Somewhere
+    city: Magic City
+    region: Magic Region
+    country: Best One
+    postal-code: 9999
+  orcid: 0000-0000-0000-0000
+  email: JD@example.org
+- name: Alice Anonymous
+  affiliations:
+  - ref: dummy
+  - id: sometech
+    number: 2
+    name: Some Tech Institute
+    department: OK Dept
+    address: Somewhere Else
+    city: Magicless City
+    region: Magicless Region
+    country: Best One
+    postal-code: 8888
+  orcid: 0000-0000-0000-0000
+  email: AA@example.org
+  equal-contributor: true
+- name: Bob Security
+  affiliations:
+  - id: someother
+    number: 3
+    name: Some Other Tech Institute
+    department: Decent Dept
+    address: Somewhere Not Close
+    city: Terrible City
+    region: Terrible Region
+    country: Worst One
+    postal-code: 7777
+  orcid: 0000-0000-0000-0000
+  email: BS@example.org
+  corresponding: true
+  equal-contributor: true
+abstract: |
+  This is the abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum augue turpis, dictum non malesuada a, volutpat eget velit. Nam placerat turpis purus, eu tristique ex tincidunt et. Mauris sed augue eget turpis ultrices tincidunt. Sed et mi in leo porta egestas. Aliquam non laoreet velit. Nunc quis ex vitae eros aliquet auctor nec ac libero. Duis laoreet sapien eu mi luctus, in bibendum leo molestie. Sed hendrerit diam diam, ac dapibus nisl volutpat vitae. Aliquam bibendum varius libero, eu efficitur justo rutrum at. Sed at tempus elit.
+keywords: 
+  - keyword1
+  - keyword2
+  - keyword3
+bibliography: bibliography.bib
+format:
+  sn-pdf:
+    classoption: [pdflatex,sn-standardnature]
+    keep-tex: true
+    number-sections: true
+  sn-html: default
+---
+
+# Discussion
+
+Discussions should be brief and focused. In some disciplines use of Discussion or Conclusion is interchangeable. It is not mandatory to use both. Some journals prefer a section Results and Discussion followed by a section Conclusion. Please refer to Journal-level guidance for any specific requirements [@bib1;@bib2].
+
+\nocite{*}
+
+# Conclusion
+
+Conclusions may be used to restate your hypothesis or research question, restate your major findings, explain the relevance and the added value of your work, highlight any limitations of your study, describe future directions for research and recommendations.
+
+![An expressive oil painting of the academic publishing company, Springer Nature, reimagined as a terrifying monster.](figure.png)
+
+In some disciplines use of Discussion or Conclusion is interchangeable. It is not mandatory to use both. Please refer to Journal-level guidance for any specific requirements.
+
+Maths test:
+
+$$
+P(e) - {n \choose k} p^k (2-p)^{n-k}
+$$ {#eq-mean}
+
+\backmatter
+\bmhead*{Supplementary Information}
+
+If your article has accompanying supplementary file/s please state so here.
+
+Authors reporting data from electrophoretic gels and blots should supply the full unprocessed scans for key as part of their Supplementary information. This may be requested by the editorial team/s if it is missing.
+
+Please refer to Journal-level guidance for any specific requirements.
+
+\bmhead*{Acknowledgements}
+
+Acknowledgments are not compulsory. Where included they should be brief. Grant or contribution numbers may be acknowledged.
+
+Please refer to Journal-level guidance for any specific requirements.
+
+\begin{appendices}
+
+\section{Section title of first appendix}\label{secA1}
+
+blah blah blah
+
+\end{appendices}
