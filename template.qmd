@@ -3,70 +3,134 @@ title: So you want to publish in Springer Nature? Here's a template for you.
 short-title: Springer Nature Quarto template
 date: now
 date-format: "YYYY"
+display-orcids: false
 author:
-- name: John Doe
+- name: Lily Green
   affiliations:
-  - id: dummy
+  - id: earth
     number: 1
-    name: Dummy Org
-    department: Awesome Dept
-    address: Somewhere
-    city: Magic City
-    region: Magic Region
-    country: Best One
-    postal-code: 9999
+    name: University of Earth Sciences
+    department: Department of Human Survival
+    address: 5 Earth Place
+    city: London
+    region: Greater London
+    country: UK
+    postal-code: EC1A OAA
   orcid: 0000-0000-0000-0000
-  email: JD@example.org
-- name: Alice Anonymous
-  affiliations:
-  - ref: dummy
-  - id: sometech
-    number: 2
-    name: Some Tech Institute
-    department: OK Dept
-    address: Somewhere Else
-    city: Magicless City
-    region: Magicless Region
-    country: Best One
-    postal-code: 8888
-  orcid: 0000-0000-0000-0000
-  email: AA@example.org
+  email: lilygreen@ues.ac.uk
   equal-contributor: true
-- name: Bob Security
+- name: Oak Wildwood
   affiliations:
-  - id: someother
-    number: 3
-    name: Some Other Tech Institute
-    department: Decent Dept
-    address: Somewhere Not Close
-    city: Terrible City
-    region: Terrible Region
-    country: Worst One
-    postal-code: 7777
+  - ref: earth
+  - id: forest
+    number: 2
+    name: Institute of Forest Ecology
+    department: Department of Mycelium
+    address: 6 Woodland Road
+    city: Oxford
+    region: Oxfordshire
+    country: UK
+    postal-code: OX2 OWT
   orcid: 0000-0000-0000-0000
-  email: BS@example.org
+  email: oakwildwood@ife.org
+- name: Ocean Blue
+  affiliations:
+  - id: marine
+    number: 3
+    name: Krill Research Centre
+    department: Department of Marine Ecology
+    address: 7 Seaside Avenue
+    city: Bristol
+    region: Bristol
+    country: UK
+    postal-code: BS8 OST
+  orcid: 0000-0000-0000-0000
+  email: oceanblue@cerc.org
+- name: Sunny Meadows
+  affiliations:
+  - ref: forest
+  - id: grass
+    number: 4
+    name: Grasslands Ecology Institute
+    department: Department of Machair
+    address: 8 Meadowview Road
+    city: Edinburgh
+    region: Midlothian
+    country: UK
+    postal-code: EH12 ORT
+  orcid: 0000-0000-0000-0000
+  email: sunnymeadows@gei.gov.uk
+  equal-contributor: true
+- name: Rainforest Reyes
+  affiliations:
+  - id: rainforest
+    number: 5
+    name: University of Tropical Ecology
+    department: Department of Functional Extinction
+    address: 9 Jungle Avenue
+    city: Manchester
+    region: Greater Manchester
+    country: UK
+    postal-code: M3 OFL
+  orcid: 0000-0000-0000-0000
+  email: rainforestreyes@ute.ac.uk
   corresponding: true
   equal-contributor: true
 abstract: |
-  This is the abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum augue turpis, dictum non malesuada a, volutpat eget velit. Nam placerat turpis purus, eu tristique ex tincidunt et. Mauris sed augue eget turpis ultrices tincidunt. Sed et mi in leo porta egestas. Aliquam non laoreet velit. Nunc quis ex vitae eros aliquet auctor nec ac libero. Duis laoreet sapien eu mi luctus, in bibendum leo molestie. Sed hendrerit diam diam, ac dapibus nisl volutpat vitae. Aliquam bibendum varius libero, eu efficitur justo rutrum at. Sed at tempus elit.
+  Attention all citizens: this is an ecological emergency. The health and stability of our planet's ecosystems are rapidly deteriorating, and immediate action is required to address this crisis. Climate change, deforestation, loss of biodiversity, and pollution are some of the major factors contributing to the decline of our planet's health.
+  
+  The consequences of inaction are dire. Rising temperatures, natural disasters, and food and water scarcity will have devastating effects on communities around the world. We are already witnessing the effects of this crisis, from raging wildfires to devastating hurricanes.
+  
+  The time for action is now. We must reduce our greenhouse gas emissions, protect and restore ecosystems, and reduce waste and pollution. We can make changes in our own lives by reducing our carbon footprint, conserving resources, and supporting environmentally friendly practices and policies.
+  
+  Let's work together to create a better future for ourselves, our children, and generations to come. Let's protect the planet and all its species, before it's too late. This is not just an environmental issue, it's a humanitarian one. The health of the planet is our health, and we must act now to save it.
 keywords: 
-  - keyword1
-  - keyword2
-  - keyword3
+  - climate
+  - biodiversity
+  - deforestation
+  - pollution
+  - sustainability
 bibliography: bibliography.bib
 format:
   sn-pdf:
-    classoption: [pdflatex,sn-standardnature]
+    classoption: sn-standardnature 
     keep-tex: true
     number-sections: true
   sn-html: default
 ---
 
+# Introduction {#sec-intro}
+## ChatGPT, what are the basics of markdown? {#sec-md-basics}
+
+Markdown is a lightweight markup language that is used to format plain text documents. It is designed to be simple and easy to read, and it uses a set of characters and symbols to indicate formatting such as headings, lists, and emphasis. Some of the basics of Markdown include:
+
+* Headings are indicated by the pound sign (#) followed by a space. The number of pound signs used indicates the level of the heading, with one pound sign indicating the highest level heading and six pound signs indicating the lowest level heading.
+
+* Lists are created by using the dash (-) or asterisk (*) followed by a space for each list item.
+
+* Emphasis can be indicated by using asterisks (*) or underscores (_) around a word or phrase. One asterisk or underscore is used for italic emphasis, and two asterisks or underscores are used for bold emphasis.
+
+* Links can be added by using the brackets [] followed by the link text, then the brackets () followed by the link URL.
+
+* Images can be added by using the exclamation mark ! followed by the brackets [] for the image's alternate text, then the brackets () followed by the image URL.
+
+* Code blocks can be indicated by using three back-ticks (```) before and after the code snippet.
+
+Markdown is a versatile and flexible language, and there are many more elements you can add, but these are the basics to get you started. Additionally, there are different flavors of markdown, so some elements may vary depending on the implementation.
+
+For more "official" guidance: <https://quarto.org/docs/authoring/markdown-basics.html>.
+
+## And what about the basics of Quarto? {#sec-quarto-basics}
+
+Quarto is a strategy board game for two players. It was invented by Swiss mathematician Blaise Müller...
+
+..I'm going to stop you there.
+
+Basics of Quarto: <https://quarto.org/docs/guide/>.
+
 # Discussion
 
-Discussions should be brief and focused. In some disciplines use of Discussion or Conclusion is interchangeable. It is not mandatory to use both. Some journals prefer a section Results and Discussion followed by a section Conclusion. Please refer to Journal-level guidance for any specific requirements [@bib1;@bib2].
-
-\nocite{*}
+Discussions should be brief and focused. In some disciplines use of Discussion or Conclusion is interchangeable. It is not mandatory to use both. Some journals prefer a section Results and Discussion followed by a section Conclusion. Please refer to Journal-level guidance for any specific requirements [@ecology101].
 
 # Conclusion
 
@@ -82,25 +146,29 @@ $$
 P(e) - {n \choose k} p^k (2-p)^{n-k}
 $$ {#eq-mean}
 
-\backmatter
-\bmhead*{Supplementary Information}
+# Acknowledgements {.backmatter}
 
-If your article has accompanying supplementary file/s please state so here.
+I acknowledge the help of ChatGPT to generate nonsense text.
 
-Authors reporting data from electrophoretic gels and blots should supply the full unprocessed scans for key as part of their Supplementary information. This may be requested by the editorial team/s if it is missing.
+# Supplementary Information {.backmatter}
 
-Please refer to Journal-level guidance for any specific requirements.
+How is this even different from an appendix?
 
-\bmhead*{Acknowledgements}
+\nocite{*}
 
-Acknowledgments are not compulsory. Where included they should be brief. Grant or contribution numbers may be acknowledged.
+---
+nocite: |
+ @*
+---
 
-Please refer to Journal-level guidance for any specific requirements.
+::: appendices
 
-\begin{appendices}
+# Does this even work? {.appendix .unnumbered}
 
-\section{Section title of first appendix}\label{secA1}
+Hopefully.
 
-blah blah blah
+# Does it work for more than one heading? {.appendix}
 
-\end{appendices}
+Hopefully it does.
+
+:::

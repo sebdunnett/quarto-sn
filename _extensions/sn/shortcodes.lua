@@ -15,3 +15,11 @@ function latex()
     return pandoc.Span('LaTeX')
   end
 end
+
+function backmatter()
+  if quarto.doc.isFormat("pdf") then
+    return pandoc.RawBlock('tex', '\\backmatter')
+  elseif quarto.doc.isFormat("html") then
+    return pandoc.Null()
+  end
+end

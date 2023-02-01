@@ -11,23 +11,43 @@ $endif$
 $for(by-author)$
 $if(it.attributes.corresponding)$
 $if(it.attributes.equal-contributor)$
-\author*[$for(it.affiliations)$$it.number$$sep$,$endfor$]{\fnm{$it.name.given$} \sur{$it.name.family$}}\email{$it.email$}
+$if(display-orcids)$
+\author*[$for(it.affiliations)$$it.number$$sep$,$endfor$]{\fnm{$it.name.given$} \sur{$it.name.family$}$if(it.orcid)$\orcidlink{$it.orcid$}$endif$}\email{$it.email$}
 \equalcont{These authors contributed equally to this work.}
 $else$
 \author*[$for(it.affiliations)$$it.number$$sep$,$endfor$]{\fnm{$it.name.given$} \sur{$it.name.family$}}\email{$it.email$}
+\equalcont{These authors contributed equally to this work.}
+$endif$
+$else$
+$if(display-orcids)$
+\author*[$for(it.affiliations)$$it.number$$sep$,$endfor$]{\fnm{$it.name.given$} \sur{$it.name.family$}$if(it.orcid)$\orcidlink{$it.orcid$}$endif$}\email{$it.email$}
+$else$
+\author*[$for(it.affiliations)$$it.number$$sep$,$endfor$]{\fnm{$it.name.given$} \sur{$it.name.family$}}\email{$it.email$}
+$endif$
 $endif$
 $else$
 $if(it.attributes.equal-contributor)$
+$if(display-orcids)$
+\author[$for(it.affiliations)$$it.number$$sep$,$endfor$]{\fnm{$it.name.given$} \sur{$it.name.family$}$if(it.orcid)$\orcidlink{$it.orcid$}$endif$}\email{$it.email$}
+\equalcont{These authors contributed equally to this work.}
+$else$
 \author[$for(it.affiliations)$$it.number$$sep$,$endfor$]{\fnm{$it.name.given$} \sur{$it.name.family$}}\email{$it.email$}
 \equalcont{These authors contributed equally to this work.}
+$endif$
+$else$
+$if(display-orcids)$
+\author[$for(it.affiliations)$$it.number$$sep$,$endfor$]{\fnm{$it.name.given$} \sur{$it.name.family$}$if(it.orcid)$\orcidlink{$it.orcid$}$endif$}\email{$it.email$}
 $else$
 \author[$for(it.affiliations)$$it.number$$sep$,$endfor$]{\fnm{$it.name.given$} \sur{$it.name.family$}}\email{$it.email$}
 $endif$
 $endif$
+$endif$$sep$
+
 $endfor$
 
 $for(by-affiliation)$
-\affil*[$it.number$]{\orgdiv{$it.department$}, \orgname{$it.name$}, \orgaddress{\street{$it.address$}, \city{$it.city$}, \postcode{$it.postal-code$}, \state{$it.region$}, \country{$it.country$}}}
+\affil[$it.number$]{\orgdiv{$it.department$}, \orgname{$it.name$}, \orgaddress{\street{$it.address$}, \city{$it.city$}, \postcode{$it.postal-code$}, \state{$it.region$}, \country{$it.country$}}}
+
 $endfor$
 
 $if(abstract)$

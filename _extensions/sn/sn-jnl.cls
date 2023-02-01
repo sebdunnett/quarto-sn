@@ -1706,7 +1706,7 @@
 \if@Standard@Nature@refstyle%
   \usepackage[numbers,sort&compress]{natbib}%
   \gdef\NumBib{YES}%
-  \bibliographystyle{sn-standardNature}%
+  \bibliographystyle{sn-standardnature}%
   \setlength{\bibsep}{1em}%
   \def\bibfont{\reset@font\fontfamily{\rmdefault}\normalsize\selectfont}%
 \fi%

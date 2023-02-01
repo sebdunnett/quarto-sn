@@ -17,8 +17,12 @@ contributes:
     pdf:
       # define default configuration for the pdf version of your format
       documentclass: sn-jnl
+      classoption: [pdflatex]
       #colorlinks: true
       #urlcolor: red
+      filters: 
+        - latex-environment.lua
+        - replace_backmatter.lua
       fig-width: 6.5
       fig-height: 4.5
       # This format use a bst file with natbib
@@ -35,7 +39,6 @@ contributes:
       - "partials/title.tex"
       - "partials/pandoc.tex"
       - "partials/doc-class.tex"
-      - "partials/biblio.tex"
       format-resources:
         # Add here the resources required for the PDF rendering
         - sn-jnl.cls
@@ -46,6 +49,7 @@ contributes:
         - sn-chicago.bst
         - sn-mathphys.bst
         - sn-vancouver.bst
+      environments: appendices
     html:
       # define default configuration for the html version of your format
       number-sections: true
