@@ -128,15 +128,93 @@ Quarto is a strategy board game for two players. It was invented by Swiss mathem
 
 Basics of Quarto: <https://quarto.org/docs/guide/>.
 
+# Using this template
+
+## Format options and differences between `sn-html` and `sn-pdf` {#sec-formopt}
+
+| Bibliography style                                     | Citation style     | Option to be used     |
+| ------------------------------------------------------ | ------------------ | --------------------- |
+| Basic Springer Nature Nature/Chemistry Reference Style | authoryear         | sn-basic              |
+| Math and Physical Sciences Reference Style [^1]        | numbered           | sn-mathphys           |
+| American Physical Society (APS) Reference Style        | numbered           | sn-aps                |
+| Vancouver Reference Style                              | numbered           | sn-vancouver          |
+| APA-based Social Sciences/Psychology Reference Style   | authoryear         | sn-apa                |
+| Chicago-based Humanities Reference Style               | authoryear         | sn-chicago            |
+| Standard Nature Portfolio Style                        | numbered           | sn-standardnature     |
+
+: {{< latex >}} document classes to use for different bibliography styles. {#tbl-bibliostyles}
+
+[^1]: Example of a first table footnote.
+
+```{r}
+library(tidyverse)
+head(iris) %>% knitr::kable(format = "latex", table.envir = "table", booktabs = TRUE)
+```
+
+## Shortcode demo {#sec-shortcode}
+
+PDF are rendered using {{< latex >}} but it is best if one can use a Markdown syntax for cross format support.
+
+{{{< latex >}}} used in source is a shortcode syntax to print "LaTeX" in fancy text where the shortcode is included in the extension folder `_extensions`. 
+
+Alternatively, Quarto supports a [number of shortcodes](https://quarto.org/docs/extensions/shortcodes.html) natively. For example, {{{< pagebreak >}}}
+
+{{< pagebreak >}}
+
+...inserts a page break.
+
+## Code chunk {#sec-chunks}
+
+This format hides chunks by default as option has been set in `_extension.yml` file.
+
 # Discussion
 
 Discussions should be brief and focused. In some disciplines use of Discussion or Conclusion is interchangeable. It is not mandatory to use both. Some journals prefer a section Results and Discussion followed by a section Conclusion. Please refer to Journal-level guidance for any specific requirements [@ecology101].
+
+```{r, fig.cap = "Every nature indicator ever"}
+# This chunk will not be shown
+plt = data.frame(Time=1:50,State=50:1)
+```
+
+But you can set `echo` option to `true` locally in the chunk:
+
+```{r, fig.cap = "Every nature indicator ever."}
+#| echo: true
+# This will appear in the output
+ggplot(plt, aes(Time,State)) +
+  geom_line() +
+  theme_minimal()
+```
+
+## Text color {#sec-summary}
+
+Our format makes applying color on inline text possible using the `[content]{color=<name>}` syntax. Let's see an example.
+
+Here we are using a special feature of our format which is the coloring because [pink is a **nice** color]{color=mypink}.
+
+This is possible thanks to the Lua Filter included in the custom extension format.
+
+## Quick maths
+
+Two plus two is four, minus one that's three -- quick maths.
+
+{{< latex >}} and Quarto handle maths very well. This can be either inline, such as $H\psi = E \psi$, or display maths like @eq-demo and @eq-demo2 below:
+
+$$
+\|\tilde{X}(k)\|^2 \leq\frac{\sum\limits_{i=1}^{p}\left\|\tilde{Y}_i(k)\right\|^2+\sum\limits_{j=1}^{q}\left\|\tilde{Z}_j(k)\right\|^2 }{p+q}
+$$ {#eq-demo}
+
+$$
+Y_\infty = \left( \frac{m}{\textrm{GeV}} \right)^{-3}
+    \left[ 1 + \frac{3 \ln(m/\textrm{GeV})}{15}
+    + \frac{\ln(c_2/5)}{15} \right]
+$$ {#eq-demo2}
 
 # Conclusion
 
 Conclusions may be used to restate your hypothesis or research question, restate your major findings, explain the relevance and the added value of your work, highlight any limitations of your study, describe future directions for research and recommendations.
 
-![An expressive oil painting of the academic publishing company, Springer Nature, reimagined as a terrifying monster.](figure.png)
+![An expressive oil painting of the academic publishing company, Springer Nature, reimagined as a terrifying monster.](figure.png){fig.pos='t'}
 
 In some disciplines use of Discussion or Conclusion is interchangeable. It is not mandatory to use both. Please refer to Journal-level guidance for any specific requirements.
 
@@ -146,11 +224,11 @@ $$
 P(e) - {n \choose k} p^k (2-p)^{n-k}
 $$ {#eq-mean}
 
-# Acknowledgements {.backmatter}
+### Acknowledgements {.backmatter .appendix}
 
 I acknowledge the help of ChatGPT to generate nonsense text.
 
-# Supplementary Information {.backmatter}
+### Supplementary Information
 
 How is this even different from an appendix?
 

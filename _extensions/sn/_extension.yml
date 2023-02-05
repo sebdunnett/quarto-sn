@@ -14,6 +14,7 @@ contributes:
       knitr:
         opts_chunk:
           echo: false
+          message: false
     pdf:
       # define default configuration for the pdf version of your format
       documentclass: sn-jnl
@@ -21,10 +22,12 @@ contributes:
       #colorlinks: true
       #urlcolor: red
       filters: 
-        - latex-environment.lua
         - replace_backmatter.lua
+        - latex-environment.lua
+        - remove_rule_parentheses.lua
       fig-width: 6.5
       fig-height: 4.5
+      fig-pos: 't'
       # This format use a bst file with natbib
       # biblio-style: sn-standardnature
       cite-method: natbib
@@ -37,7 +40,7 @@ contributes:
       template-partials:
       - "partials/before-body.tex"
       - "partials/title.tex"
-      - "partials/pandoc.tex"
+      #- "partials/pandoc.tex"
       - "partials/doc-class.tex"
       format-resources:
         # Add here the resources required for the PDF rendering
